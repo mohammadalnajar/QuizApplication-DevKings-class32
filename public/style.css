@@ -1,0 +1,344 @@
+*,
+*::after,
+*::before {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  border: none;
+}
+
+a,
+a:visited {
+  text-underline-position: under;
+
+  color: rgb(150, 146, 146);
+  font-family: FreeMono, monospace;
+}
+a:hover {
+  color: white;
+}
+
+body {
+  background-image: url(/public/quiz-bg2.gif);
+  background-repeat: repeat;
+  background-size: cover;
+}
+
+body.no-animation {
+  background-image: url(/public/quiz-bg4.jpg);
+  background-repeat: repeat;
+}
+
+#stop_animation {
+  position: fixed;
+  bottom: 5%;
+  right: 5%;
+  width: 80px;
+  height: 80px;
+  font-size: 10px;
+  color: rgb(2, 2, 2);
+  line-height: 18px;
+  background-image: radial-gradient(#069c51, #fff);
+  clip-path: circle(50% at 50% 50%);
+  text-align: center;
+  cursor: pointer;
+  text-shadow: 1px 5px 10px black;
+  font-family: 'Battlestar', sans-serif;
+}
+
+#start-game {
+  font-size: 3rem;
+  padding: 1.2rem 3.5rem;
+  background-color: rgb(240, 205, 49);
+  color: rgb(18, 15, 31);
+  font-weight: 600;
+  border-radius: 20px;
+  font-family: 'Battlestar', sans-serif;
+  box-shadow: 0px 5px 10px #91e0fa;
+  border: none;
+  cursor: pointer;
+  text-shadow: 1px 5px 10px black;
+}
+#start-game:hover {
+  transform: translateY(15%);
+}
+
+.questionCounter {
+  color: rgb(235, 241, 235);
+  margin-top: 50px;
+  margin-left: 50px;
+  font-size: 1.5rem;
+  line-height: 30px;
+  font-family: 'Odibee Sans', cursive;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  background-color: rgba(12, 11, 11, 0.164);
+  padding: 10px;
+  width: 40%;
+}
+
+#score-container {
+  position: absolute;
+  top: 50px;
+  right: 10%;
+  height: 2rem;
+  border: 5px solid green;
+  border-radius: 10px;
+  width: 25%;
+  color: rgb(224, 210, 8);
+}
+
+#score-container h3 {
+  height: 100%;
+  width: 0%;
+  background-color: #fff;
+  border-radius: 5px;
+}
+
+#quiz-container {
+  background-color: black;
+  width: 70vw;
+  padding: 50px 100px;
+  font-weight: 300;
+  color: aliceblue;
+  border: 5px solid green;
+  border-radius: 15px;
+  margin-top: 50px;
+}
+
+#question-container h1 {
+  font-size: 1.8rem;
+  font-weight: 400;
+  font-family: 'Odibee Sans', cursive;
+  letter-spacing: 3px;
+  animation-name: zoomOut;
+  animation-duration: 1s;
+}
+
+ol {
+  list-style: none;
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns: 1fr 1fr;
+  margin-top: 40px;
+}
+
+.btn {
+  background-color: black;
+  border: 4px solid green;
+  width: 100%;
+  margin: 10px auto;
+  color: rgb(243, 245, 243);
+  font-size: 1.2rem;
+  font-weight: 400;
+  padding: 20px;
+  border-radius: 10px;
+  font-family: Arial, Helvetica, sans-serif;
+  cursor: pointer;
+}
+
+.btn:hover {
+  box-shadow: 3px 3px 10px rgb(240, 205, 49);
+  border-color: rgb(240, 205, 49);
+}
+
+#next-question-button,
+#result-btn {
+  font-size: 20px;
+  padding: 10px 20px;
+  font-weight: 400;
+  background-color: green;
+  color: black;
+  margin-top: 50px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-family: 'Dance Floor', sans-serif;
+}
+
+#next-question-button:hover,
+#result-btn:hover {
+  color: white;
+  box-shadow: 0px 2px 10px rgb(147, 255, 156);
+}
+
+.result-container {
+  grid-gap: 10px;
+  grid-template-columns: 1fr 1fr;
+  justify-content: center;
+  align-content: center;
+}
+
+.result_item {
+  border: 1px solid green;
+  padding: 10px;
+  border-radius: 8px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 70%;
+}
+
+#resource-link {
+  margin-top: 40px;
+}
+
+#user-score {
+  color: rgb(114, 255, 71);
+  font-size: 20px;
+  text-transform: uppercase;
+  font-weight: 400;
+}
+
+.centered {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.scrollable {
+  height: auto;
+  max-height: 80vh;
+  overflow: auto;
+}
+
+.wrong {
+  background-color: red;
+  border: 2px solid red;
+}
+.correct {
+  background-color: green;
+}
+
+.hide {
+  display: none;
+}
+
+@keyframes zoomOut {
+  0% {
+    transition: ease-out;
+    font-size: 0.5rem;
+  }
+  100% {
+    transition: ease-out;
+    font-size: 2rem;
+  }
+}
+
+.resultHeight {
+  height: 550px;
+}
+.titleStyle {
+  color: red;
+  text-align: center;
+}
+/* for tab version  */
+@media only screen and (max-width: 1040px) {
+  #start-game {
+    font-size: 30px;
+  }
+
+  #score-container {
+    margin-top: 30px;
+    border: 2px solid rgb(224, 210, 8);
+    border-radius: 8px;
+    background-color: rgb(224, 210, 8);
+  }
+
+  #score-container h3 {
+    background-color: green;
+  }
+
+  #quiz-container {
+    padding: 20px 10px;
+    border: none;
+    border-top: 5px solid green;
+    border-bottom: 5px solid green;
+    border-radius: 1px;
+    height: 70%;
+  }
+
+  ol {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .btn {
+    border: 1px solid green;
+  }
+
+  @keyframes zoomOutMob {
+    0% {
+      transition: ease-out;
+      font-size: 0.1rem;
+    }
+    100% {
+      transition: ease-out;
+      font-size: 1.5rem;
+    }
+  }
+}
+
+/* -------------------------------------------------------
+
+/* mobile version  */
+@media only screen and (max-width: 700px) {
+  #start-game {
+    font-size: 1.5rem;
+  }
+
+  .questionCounter {
+    display: block;
+    margin-left: 35px;
+    margin-top: 20px;
+    font-size: 1rem;
+    width: 100%;
+  }
+
+  #score-container {
+    width: 90%;
+    right: 5%;
+    border: 2px solid rgb(224, 210, 8);
+    background-color: rgb(224, 210, 8);
+  }
+
+  #quiz-container {
+    border-top: 5px solid green;
+    border-bottom: 5px solid green;
+  }
+
+  #next-question-button,
+  #result-btn {
+    font-size: 0.8rem;
+  }
+  .resultHeight {
+    height: 600px;
+  }
+  .result_item {
+    font-size: 50%;
+  }
+  #correctQuestionContainer {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  #stop_animation {
+    height: 40px;
+    width: 40px;
+    font-size: 40%;
+    line-height: 10px;
+    position: absolute;
+    bottom: 30px;
+    right: 40px;
+  }
+
+  @keyframes zoomOutMob {
+    0% {
+      transition: ease-out;
+      font-size: 0.1rem;
+    }
+    100% {
+      transition: ease-out;
+      font-size: 1.5rem;
+    }
+  }
+}
